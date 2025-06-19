@@ -39,6 +39,6 @@ sudo systemctl enable docker
 
 echo "Running containers.sh now..."
 newgrp docker<<EONG
-  ./containers.sh
+  ./scripts/containers.sh
   exit
 EONG
