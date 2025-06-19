@@ -73,6 +73,25 @@ A containerized web application that allows users to visually simulate custom Tu
 
 ---
 
+## Setting up a server from scratch
+
+I've included a ```main.sh``` script to set up a firewall and configure the server for proper deployment of the web-app. To replicate this set-up (Ensure you've got root access):
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/R2D2-08/tursim.git
+   cd tursim
+   ```
+2. **Make the script executable:**
+   ```bash
+   chmod 744 main.sh
+   ```
+3. **Run the Script:**
+   ```bash
+   ./main.sh
+   ```
+   
+---
 ## Components
 
 ### Backend (`backend/`)
