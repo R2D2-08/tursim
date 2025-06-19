@@ -1,12 +1,12 @@
-chmod 744 ${PWD}/installation.sh
-chmod 744 ${PWD}/containers.sh
+chmod 744 ${PWD}/scripts/installation.sh
+chmod 744 ${PWD}/scripts/containers.sh
 
 (
-./installation.sh
+./scripts/installation.sh
 ) &
 
 wait
 
 (
-./containers.sh
+./scripts/containers.sh
 )
