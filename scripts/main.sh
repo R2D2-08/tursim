@@ -3,7 +3,7 @@ chmod 744 ${PWD}/scripts/containers.sh
 
 (
 ./scripts/installation.sh
-) &
+)
 
 wait
 
