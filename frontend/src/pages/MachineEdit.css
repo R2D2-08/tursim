@@ -1,0 +1,176 @@
+.machine-edit {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.edit-header {
+  margin-bottom: 1rem;
+}
+
+.edit-header h1 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+
+.edit-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.states-section,
+.symbols-section,
+.transitions-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0;
+}
+
+.add-button {
+  background: #ccc;
+  color: #000;
+  border: 1px solid #999;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.add-button:hover {
+  background: #ddd;
+}
+
+.states-list,
+.symbols-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.state-item,
+.symbol-item {
+  background: #eee;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: #c00;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.remove-button:hover {
+  color: #900;
+}
+
+.transitions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transition-item {
+  background: #eee;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.transition-item select {
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.transition-item input {
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.save-button {
+  background: #ccc;
+  color: #000;
+  border: 1px solid #999;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.save-button:hover {
+  background: #ddd;
+}
+
+.back-button {
+  background: white;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .machine-edit {
+    padding: 0.5rem;
+  }
+
+  .edit-container {
+    padding: 0.5rem;
+  }
+
+  .transition-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .transition-item select,
+  .transition-item input {
+    width: 100%;
+  }
+} 

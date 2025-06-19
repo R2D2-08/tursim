@@ -1,0 +1,243 @@
+.machine-run {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.machine-header {
+  margin-bottom: 1rem;
+}
+
+.machine-header h1 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+
+.machine-info {
+  color: #444;
+  font-size: 0.8rem;
+}
+
+.tape-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.tape-wrapper {
+  position: relative;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.tape {
+  display: flex;
+  gap: 0;
+  padding: 0 1rem;
+}
+
+.tape-cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1.2rem;
+  background: #fff;
+  position: relative;
+}
+
+.tape-cell.head {
+  background: #eee;
+}
+
+.tape-cell.head::after {
+  content: '▼';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  font-size: 1rem;
+}
+
+.controls {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  margin-bottom: 0.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.control-button {
+  background: #ccc;
+  color: #000;
+  border: 1px solid #999;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.control-button:hover {
+  background: #ddd;
+}
+
+.control-button:disabled {
+  background: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.output {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.output h2 {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.output-text {
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #000;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.history {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.history h2 {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-item {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #eee;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.speed-controls {
+  margin: 0.5rem 0;
+}
+
+.speed-controls label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.speed-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.speed-button {
+  background: #eee;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.speed-button:hover {
+  background: #ddd;
+}
+
+.speed-button.active {
+  background: #ccc;
+  border-color: #999;
+}
+
+.speed-button:disabled {
+  background: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.back-button {
+  background: white;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .machine-run {
+    padding: 0.5rem;
+  }
+
+  .tape-container,
+  .controls,
+  .output,
+  .history {
+    padding: 0.5rem;
+  }
+
+  .tape-cell {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .control-buttons {
+    flex-direction: column;
+  }
+
+  .control-button {
+    width: 100%;
+  }
+} 

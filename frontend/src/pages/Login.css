@@ -1,0 +1,75 @@
+.login {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.login-box {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background: white;
+}
+
+.login-header {
+  margin-bottom: 1rem;
+}
+
+.login-header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.login-button {
+  width: 100%;
+  background: white;
+  border: 1px solid #333;
+  color: #333;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.login-button:hover {
+  background: #f5f5f5;
+}
+
+.signup-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #333;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+} 

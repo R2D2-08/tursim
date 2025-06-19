@@ -1,0 +1,60 @@
+.signup {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.signup-box {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.signup-header {
+  margin-bottom: 1rem;
+}
+
+.signup-header h1 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid black;
+}
+
+.signup-button {
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-link {
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-link a {
+  color: black;
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+} 

@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+      - coderunner
+    networks:
+      - turing-network
+
+  backend:
+    build: ./backend
+    container_name: backend
+    env_file: ./backend/.env
+    depends_on:
+      - db
+    networks:
+      - turing-network
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    env_file: ./frontend/.env
+    depends_on:
+      - backend
+      - coderunner
+    networks:
+      - turing-network
+
+  coderunner:
+    build: ./coderunner
+    container_name: coderunner
+    networks:
+      - turing-network
+
+  db:
+    image: postgres:15-alpine
+    container_name: db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-thisdb}
+      POSTGRES_USER: ${POSTGRES_USER:-thisuser}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-thisuser}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - turing-network
+
+  grafana:
+    build: ./grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - turing-network
+
+  prometheus:
+    build: ./prometheus
+    container_name: prometheus
+    networks:
+      - turing-network
+
+  cadvisor:
+    build: ./cadvisor
+    container_name: cadvisor
+    networks:
+      - turing-network
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+
+networks:
+  turing-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  grafana_data: 

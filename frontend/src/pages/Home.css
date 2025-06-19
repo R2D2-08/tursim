@@ -1,0 +1,43 @@
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.home-content {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.home h1 {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.home-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.primary-button, .secondary-button {
+  padding: 12px 24px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.primary-button:hover, .secondary-button:hover {
+  background: #f5f5f5;
+} 
