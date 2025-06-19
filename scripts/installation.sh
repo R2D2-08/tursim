@@ -38,4 +38,6 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 echo "Running containers.sh now..."
-newgrp docker
+newgrp docker<<EONG
+  exit
+EONG
