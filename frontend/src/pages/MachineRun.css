@@ -1,30 +1,35 @@
 .machine-run {
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .machine-header {
-  margin-bottom: 1rem;
+  margin-bottom: 32px;
 }
 
 .machine-header h1 {
-  font-size: 1.8rem;
-  color: #000;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #222;
   margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
 }
 
 .machine-info {
   color: #444;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-.tape-container {
+.tape-container, .controls, .output, .history {
   background: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
+  border: 1.5px solid #222;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 48px 32px;
+  margin-bottom: 32px;
+  text-align: left;
 }
 
 .tape-wrapper {
@@ -42,7 +47,7 @@
 .tape-cell {
   width: 40px;
   height: 40px;
-  border: 1px solid #ccc;
+  border: 1.2px solid #222;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,10 +55,11 @@
   font-size: 1.2rem;
   background: #fff;
   position: relative;
+  border-radius: 6px;
 }
 
 .tape-cell.head {
-  background: #eee;
+  background: #fafafa;
 }
 
 .tape-cell.head::after {
@@ -67,46 +73,54 @@
 }
 
 .controls {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 32px;
 }
 
 .input-group {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 0.25rem;
-  color: #000;
+  margin-bottom: 0.4rem;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .input-group input {
   width: 100%;
-  padding: 0.25rem;
-  border: 1px solid #ccc;
-  font-size: 0.9rem;
+  padding: 10px 12px;
+  border: 1.2px solid #222;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  font-weight: 400;
 }
 
 .control-buttons {
   display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .control-button {
-  background: #ccc;
-  color: #000;
-  border: 1px solid #999;
-  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #222;
+  padding: 14px 32px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
 .control-button:hover {
-  background: #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  outline: none;
+  background: #f5f5f5;
 }
 
 .control-button:disabled {
@@ -116,36 +130,33 @@
 }
 
 .output {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 32px;
 }
 
 .output h2 {
-  font-size: 1.2rem;
-  color: #000;
+  font-size: 1.3rem;
+  color: #222;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .output-text {
   font-family: monospace;
   white-space: pre-wrap;
-  color: #000;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  color: #222;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .history {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
+  margin-bottom: 32px;
 }
 
 .history h2 {
-  font-size: 1.2rem;
-  color: #000;
+  font-size: 1.3rem;
+  color: #222;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .history-list {
@@ -157,8 +168,8 @@
 .history-item {
   padding: 0.25rem 0;
   border-bottom: 1px solid #eee;
-  color: #000;
-  font-size: 0.9rem;
+  color: #222;
+  font-size: 1rem;
 }
 
 .history-item:last-child {
@@ -166,37 +177,44 @@
 }
 
 .speed-controls {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 .speed-controls label {
   display: block;
-  margin-bottom: 0.25rem;
-  color: #000;
+  margin-bottom: 0.4rem;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .speed-buttons {
   display: flex;
-  gap: 0.25rem;
+  gap: 0.5rem;
 }
 
 .speed-button {
-  background: #eee;
-  color: #000;
-  border: 1px solid #ccc;
-  padding: 0.25rem 0.5rem;
+  background: #fafafa;
+  color: #222;
+  border: 1.2px solid #222;
+  padding: 8px 18px;
   cursor: pointer;
-  font-size: 0.9rem;
-  flex: 1;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
 .speed-button:hover {
-  background: #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  outline: none;
+  background: #f5f5f5;
 }
 
 .speed-button.active {
-  background: #ccc;
-  border-color: #999;
+  background: #e0e0e0;
+  border-color: #222;
 }
 
 .speed-button:disabled {
@@ -206,38 +224,69 @@
 }
 
 .back-button {
-  background: white;
-  border: 1px solid #333;
-  color: #333;
-  padding: 0.5rem 1rem;
+  background: #fff;
+  border: 1.5px solid #222;
+  color: #222;
+  padding: 14px 32px;
   cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
-@media (max-width: 768px) {
+.back-button:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  outline: none;
+  background: #f5f5f5;
+}
+
+@media (max-width: 900px) {
   .machine-run {
-    padding: 0.5rem;
+    padding: 32px 0;
   }
-
-  .tape-container,
-  .controls,
-  .output,
-  .history {
-    padding: 0.5rem;
+  .tape-container, .controls, .output, .history {
+    padding: 24px 8px;
   }
+}
 
+@media (max-width: 600px) {
+  .machine-run {
+    padding: 18px 0;
+  }
+  .machine-header h1 {
+    font-size: 1.3rem;
+  }
+  .tape-container, .controls, .output, .history {
+    padding: 12px 2px;
+    border-radius: 8px;
+  }
   .tape-cell {
     width: 30px;
     height: 30px;
     font-size: 1rem;
   }
-
   .control-buttons {
     flex-direction: column;
+    gap: 0.5rem;
   }
-
   .control-button {
     width: 100%;
+    padding: 10px 0;
+    font-size: 0.98rem;
+    border-radius: 6px;
+  }
+  .output h2, .history h2 {
+    font-size: 1rem;
+  }
+  .output-text, .history-item {
+    font-size: 0.98rem;
+  }
+  .speed-button {
+    padding: 10px 0;
+    font-size: 0.98rem;
+    border-radius: 6px;
   }
 } 

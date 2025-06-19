@@ -1,38 +1,55 @@
 .profile {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px 0;
+  text-align: center;
 }
 
 .profile-box {
-  border: 1px solid #ccc;
-  padding: 20px;
-  background: white;
+  border: 1.5px solid #222;
+  padding: 48px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 .profile-box h2 {
-  margin: 0 0 20px 0;
-  font-size: 20px;
+  margin: 0 0 24px 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
+  align-items: flex-start;
 }
 
 .info-item {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  font-size: 1.1rem;
 }
 
 .info-item label {
   font-weight: 500;
   min-width: 60px;
+  color: #222;
 }
 
 .info-item span {
-  color: #666;
+  color: #444;
+}
+
+.error {
+  color: #b00020;
+  font-size: 0.98rem;
+  margin-top: 0.5rem;
+  text-align: left;
 }
 
 .profile-header {
@@ -180,13 +197,21 @@
   background: #218838;
 }
 
-@media (max-width: 768px) {
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 600px) {
+  .profile {
+    padding: 18px 0;
   }
-  
+  .profile-box {
+    padding: 18px 8px;
+    border-radius: 8px;
+    max-width: 100%;
+  }
+  .profile-box h2 {
+    font-size: 1.3rem;
+  }
   .info-item {
+    font-size: 0.98rem;
+    gap: 8px;
     flex-direction: column;
     align-items: flex-start;
   }

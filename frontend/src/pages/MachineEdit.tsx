@@ -203,8 +203,8 @@ const MachineEdit: React.FC = () => {
               required
             />
           </div>
-
-          <div className="form-section">
+          
+          <div className="states-section">
             <h2>States</h2>
             <div className="states-grid">
               {machine.states.map((state) => (
@@ -239,8 +239,8 @@ const MachineEdit: React.FC = () => {
               <button type="button" onClick={handleAddState}>Add State</button>
             </form>
           </div>
-
-          <div className="form-section">
+          
+          <div className="symbols-section">
             <h2>Input Alphabet (Please include the blank symbol '_')</h2>
             <div className="symbols-list">
               {machine.input_alphabet.map((symbol, index) => (
@@ -259,8 +259,8 @@ const MachineEdit: React.FC = () => {
               <button type="button" onClick={handleAddSymbol}>Add Symbol</button>
             </form>
           </div>
-
-          <div className="form-section">
+          
+          <div className="transitions-section">
             <h2>Transitions</h2>
             <div className="transitions-list">
               {machine.transitions.map((transition, index) => (
@@ -423,11 +423,10 @@ const MachineEdit: React.FC = () => {
               <button type="button" onClick={handleAddTransition}>Add Transition</button>
             </form>
           </div>
-
-          <div className="form-actions">
-            <button type="submit" className="save-button">Save Machine</button>
-          </div>
         </form>
+        <button className="save-button" onClick={handleSave} style={{marginTop: '2rem'}}>
+          Save Machine
+        </button>
         <button onClick={() => navigate('/dashboard')} className="back-button">
           Back to Dashboard
         </button>

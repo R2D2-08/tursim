@@ -1,60 +1,102 @@
-.signup {
-  width: 300px;
-  margin: 20px auto;
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
 }
 
-.signup-box {
-  border: 2px solid black;
-  padding: 10px;
-}
-
-.signup-header {
-  margin-bottom: 1rem;
-}
-
-.signup-header h1 {
-  font-size: 18px;
-  margin: 0 0 10px 0;
-}
-
-.form-group {
-  margin-bottom: 8px;
-}
-
-.form-group label {
-  font-size: 14px;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.form-group input {
+.auth-box {
+  max-width: 350px;
   width: 100%;
-  padding: 4px;
-  border: 1px solid black;
+  margin: 0 auto;
+  border: 1.5px solid #222;
+  padding: 40px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
-.signup-button {
-  width: 100%;
-  background-color: #f0f0f0;
-  border: 1px solid black;
-  padding: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.login-link {
-  margin-top: 8px;
-  font-size: 12px;
+.auth-box h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
-.login-link a {
-  color: black;
+.auth-subtitle {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.2px solid #222;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  font-weight: 400;
+}
+
+.auth-submit {
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #222;
+  color: #222;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.auth-submit:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  outline: none;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+.auth-footer a {
+  color: #222;
   text-decoration: underline;
 }
 
-.error {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
+.auth-footer a:hover {
+  text-decoration: none;
+}
+
+.auth-error {
+  color: #b00020;
+  font-size: 0.98rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.auth-success {
+  color: #007700;
+  font-size: 0.98rem;
+  margin-top: 0.5rem;
+  text-align: center;
 } 
