@@ -1,2 +1,2 @@
-bash main.sh
+bash install.sh
 bash containers.sh
