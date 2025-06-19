@@ -18,12 +18,25 @@ const Login: React.FC = () => {
       const response = await authAPI.login({ email, password });
 
       localStorage.setItem('token', response.token);
-
       localStorage.setItem('user', JSON.stringify(response.user));
-
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err?.response?.data?.message || 'Invalid credentials');
+      let msg = 'Invalid credentials';
+      if (err?.response?.data) {
+        const data = err.response.data;
+        if (typeof data === 'string') {
+          msg = data;
+        } else if (data.error) {
+          msg = data.error;
+        } else if (data.message) {
+          msg = data.message;
+        } else if (typeof data === 'object') {
+          msg = Object.entries(data)
+            .map(([field, errors]) => `${field}: ${Array.isArray(errors) ? errors.join(', ') : errors}`)
+            .join(' | ');
+        }
+      }
+      setError(msg);
     }
   };
 
