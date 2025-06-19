@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 import traceback
+import tempfile
+import subprocess
+import sys
+import os
 
 app = FastAPI()
 
@@ -21,26 +25,34 @@ SAFE_GLOBALS = {
         "int": int,
         "float": float,
         "bool": bool,
-    }#,
-    #"tools": tools
+    }
 }
 
 @app.post("/execute", response_model=ExecuteCodeResponse)
 async def execute_code(payload: CodePayload):
-    local_vars = {}
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False) as tmpfile:
+        tmpfile.write(payload.code)
+        tmpfile_path = tmpfile.name
 
     try:
-        import io, sys
-        old_stdout = sys.stdout
-        sys.stdout = mystdout = io.StringIO()
-
-        exec(payload.code, SAFE_GLOBALS, local_vars)
-
-        sys.stdout = old_stdout
-        output = mystdout.getvalue()
-
-        return ExecuteCodeResponse(output=output)
+        python_executable = sys.executable
+        result = subprocess.run(
+            [python_executable, tmpfile_path],
+            capture_output=True,
+            text=True,
+            timeout=10,
+            env=os.environ.copy(),
+        )
+        output = result.stdout
+        error = result.stderr if result.returncode != 0 else None
+        return ExecuteCodeResponse(output=output, error=error)
+    except subprocess.TimeoutExpired:
+        return ExecuteCodeResponse(output="", error="Execution timed out.")
     except Exception:
-        sys.stdout = old_stdout
         return ExecuteCodeResponse(output="", error=traceback.format_exc())
+    finally:
+        try:
+            os.remove(tmpfile_path)
+        except Exception:
+            pass
 
