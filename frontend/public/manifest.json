@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TM Simulator",
+  "name": "turing machines simulator",
   "icons": [
     {
       "src": "favicon.ico",

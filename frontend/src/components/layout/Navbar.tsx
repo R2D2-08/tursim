@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-content">
-        <Link to="/" className="navbar-brand">Turing Machine</Link>
+        <Link to="/" className="navbar-brand">Turing Machine Simulator</Link>
         <div className="navbar-links">
           {isAuthenticated ? (
             <>
