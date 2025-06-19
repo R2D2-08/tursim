@@ -38,7 +38,7 @@ const MachineRun: React.FC = () => {
   const [currentState, setCurrentState] = useState('');
   const [headPosition, setHeadPosition] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const [speed, setSpeed] = useState(1); // 1x, 2x, 5x, 10x
+  const [speed, setSpeed] = useState(1);
   const [output, setOutput] = useState('');
   const navigate = useNavigate();
 
@@ -54,7 +54,6 @@ const MachineRun: React.FC = () => {
         setLoading(true);
         const machineData = await machineAPI.getOne(id);
         
-        // Transform API machine data to component format
         const transformedMachine: Machine = {
           name: machineData.name,
           states: machineData.states.map(state => ({

@@ -18,7 +18,6 @@ class SignupSerializer(serializers.ModelSerializer):
         fields = ('name', 'email', 'password')
 
     def create(self, validated_data):
-        # Set username to email if not provided
         validated_data['username'] = validated_data['email']
         user = User.objects.create_user(**validated_data)
         return user

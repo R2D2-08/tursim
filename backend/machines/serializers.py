@@ -92,7 +92,6 @@ class MachineSerializer(serializers.ModelSerializer):
         transitions_data = validated_data.pop('transitions', [])
         start_state_name = validated_data.pop('start_state', None)
         
-        # Create the machine first
         machine = Machine.objects.create(
             name=validated_data['name'],
             input_alphabet=validated_data['input_alphabet'],
