@@ -82,11 +82,15 @@ I've included a ```main.sh``` script to set up a firewall and configure the serv
    git clone https://github.com/R2D2-08/tursim.git
    cd tursim
    ```
-2. **Make the script executable:**
+2. **Set REACT_APP_API_URL in ```frontend/env.example``` to your server's IP address followed by ```/api```:**
+   ```bash
+   REACT_APP_API_URL=<server-ip>/api
+   ```
+3. **Make the script executable:**
    ```bash
    chmod 744 main.sh
    ```
-3. **Run the Script:**
+4. **Run the Script:**
    ```bash
    ./main.sh
    ```
