@@ -17,7 +17,13 @@ const Dashboard: React.FC = () => {
       setLoading(true);
       setError(null);
       const data = await machineAPI.getAll();
-      setMachines(data);
+      console.log('Fetched machines:', data);
+      if (Array.isArray(data)) {
+        setMachines(data);
+      } else {
+        console.warn('API did not return an array. Received:', data);
+        setMachines([]);
+      }
     } catch (err) {
       console.error('Error fetching machines:', err);
       setError('Failed to load machines. Please try again later.');
