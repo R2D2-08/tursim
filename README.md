@@ -84,7 +84,7 @@ I've included a ```main.sh``` script to set up a firewall and configure the serv
    ```
 2. **Set REACT_APP_API_URL in ```frontend/env.example``` to your server's IP address followed by ```/api```:**
    ```bash
-   REACT_APP_API_URL=<server-ip>/api
+   REACT_APP_API_URL=http://<server-ip>/api
    ```
 3. **Make the script executable:**
    ```bash
