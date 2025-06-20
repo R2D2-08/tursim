@@ -86,11 +86,28 @@ I've included a ```main.sh``` script to set up a firewall and configure the serv
    ```bash
    REACT_APP_API_URL=http://<server-ip>/api
    ```
-3. **Make the script executable:**
+3.**Handle CORS:**
+   Add your server's IP address to the ALLOWED_HOSTS in backend/backend/settings.py
+   Additionally, add ```http://<IP-Address>``` to CORS_ALLOWED_ORIGINS in backend/backend/settings.py
+   ```python
+
+ALLOWED_HOSTS = [
+    '<server-ip>',
+]
+
+...
+
+CORS_ALLOWED_ORIGINS = [
+    ...
+    "http://<server-ip>",
+]
+
+   ```
+4. **Make the script executable:**
    ```bash
    chmod 744 main.sh
    ```
-4. **Run the Script:**
+5. **Run the Script:**
    ```bash
    ./main.sh
    ```
